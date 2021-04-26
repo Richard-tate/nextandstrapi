@@ -1,8 +1,10 @@
+import Layout from "@components/Layout";
+
 const eventPage = () => {
 	return (
-		<div>
+		<Layout>
 			<h1>My event</h1>
-		</div>
+		</Layout>
 	);
 };
 

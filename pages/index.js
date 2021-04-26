@@ -1,9 +1,12 @@
-import styles from "../styles/Home.module.css";
+import Layout from "@components/Layout";
+import styles from "@styles/Showcase.module.css";
 
 export default function Home() {
 	return (
-		<main className={styles.container}>
-			<section className={styles.section_hero}></section>
-		</main>
+		<Layout>
+			<div>
+				<h1>home</h1>
+			</div>
+		</Layout>
 	);
 }
