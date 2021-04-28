@@ -1,12 +1,24 @@
+import { API_URL } from "@config/index";
 import Layout from "@components/Layout";
-import Link from "next/link";
-const eventsPage = () => {
+import SingleEvent from "@components/SingleEvent";
+import styles from "@styles/SingleEvent.module.css";
+
+export default function EventPage({ events }) {
 	return (
-		<Layout title="DJ Events | Your Events">
-			<h2>events go here</h2>
-			<Link href="/events/add">Add an event</Link>
+		<Layout>
+			<h2 className={styles.title_sub}>Events</h2>
+			{events.length === 0 && <h3>No events to show</h3>}
+			<SingleEvent events={events} />
 		</Layout>
 	);
-};
+}
 
-export default eventsPage;
+export async function getStaticProps() {
+	const res = await fetch(`${API_URL}/api/events/`);
+	const events = await res.json();
+
+	return {
+		props: { events },
+		revalidate: 1,
+	};
+}

@@ -8,7 +8,7 @@ const SingleEvent = ({ events }) => {
 	return (
 		<div className={styles.evt}>
 			{events.map((evt) => {
-				const { name, id, date, image, description, slug } = evt;
+				const { name, id, date, image, description, slug, time } = evt;
 				return (
 					<div key={id} className={styles.event_con}>
 						<Image
@@ -20,9 +20,11 @@ const SingleEvent = ({ events }) => {
 						/>
 						<div className={styles.info}>
 							<h2>{name}</h2>
-							<p>{date}</p>
+							<p>
+								{date} at {time}
+							</p>
 
-							<Link href={`events/${slug}`}>
+							<Link href={`/events/${slug}`}>
 								<button className={styles.btn}>See more...</button>
 							</Link>
 						</div>

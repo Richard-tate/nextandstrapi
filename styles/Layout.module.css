@@ -1,13 +1,11 @@
 /* start of main  styles */
 .container {
-	min-height: 100vh;
-	padding: 0 0.5rem;
+	min-height: 80vh;
+	padding: 0.5rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: center;
-}
-.container h2 {
 	margin: 1rem 0;
 }
 
